@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 Doorkeeper.configure do
-  access_token_class 'AccessToken'
-
   orm :active_record
 
   default_scopes :client

@@ -10,6 +10,8 @@ Rails.application.routes.draw do
       resources :users, only: [] do
         post :login , on: :collection
       end
+
+      resources :movies, only: [:index]
     end
   end
 end
