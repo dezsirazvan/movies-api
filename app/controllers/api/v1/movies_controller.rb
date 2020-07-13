@@ -1,6 +1,9 @@
 class Api::V1::MoviesController < Api::V1::BaseController
+  skip_before_action :authorize_client!
 
   def index
-    render json: {'name': 'movie1'}
+    movies = Movie.all_cached
+
+    render json: movies
   end
 end

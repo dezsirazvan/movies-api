@@ -9,9 +9,14 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, only: [] do
         post :login , on: :collection
+        get  :movies_and_seasons, on: :collection
+        get  :library, on: :collection
+        post :purchase, on: :collection
       end
 
       resources :movies, only: [:index]
+
+      resources :seasons, only: [:index]
     end
   end
 end

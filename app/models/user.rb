@@ -8,5 +8,6 @@ class User < ApplicationRecord
   
   before_save { email.downcase! }
 
+  has_many :purchases, dependent: :destroy
   has_many :access_tokens, class_name: 'Doorkeeper::AccessToken', foreign_key: :resource_owner_id, dependent: :destroy
 end
