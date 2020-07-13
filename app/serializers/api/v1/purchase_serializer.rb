@@ -9,7 +9,7 @@ class Api::V1::PurchaseSerializer < ActiveModel::Serializer
   def remaining_time
     time_diff = Time.now - object.created_at
 
-    Time.at(2.days - time_diff.to_i.abss).utc.strftime "%H:%M:%S"
+    Time.at(2.days - time_diff.to_i.abs).utc.strftime "%H:%M:%S"
   end
 end
     
