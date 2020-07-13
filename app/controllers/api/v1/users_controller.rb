@@ -44,7 +44,7 @@ class Api::V1::UsersController < Api::V1::BaseController
   end
 
   def library
-    purchases = @user.purchases
+    purchases = @user.purchases.in_library
 
     render json: purchases, each_serializer: Api::V1::PurchaseSerializer
   end

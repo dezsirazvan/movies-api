@@ -6,4 +6,6 @@ class Purchase < ApplicationRecord
   belongs_to :season, optional: true
 
   scope :ordered, -> { order('created_at ASC') }
+  scope :in_library, -> { where('created_at >= ?', DateTime.current - 2.days) }
+  scope :not_in_library, -> { where('created_at < ?', DateTime.current - 2.days) }
 end
